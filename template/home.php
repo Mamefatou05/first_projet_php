@@ -20,8 +20,6 @@
     </div>
     <div class="content">
       <?php
-
-
       $file = array(
         "1" => "promotion_controll",
         "2" => "promo_controll",
