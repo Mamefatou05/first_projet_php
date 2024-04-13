@@ -12,4 +12,15 @@ function paginate($items, $perPage, $page)
         'currentPage' => $page,
     ];
 }
+function filterByActivePromotion($data, $active_promotion, $key)
+{
+    $filtered_data = [];
+    foreach ($data as $item) {
+        if ($item['promotion'] === $active_promotion) {
+            $filtered_data[] = $item[$key];
+        }
+    }
+    return $filtered_data;
+}
+
 ?>

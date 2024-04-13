@@ -47,21 +47,3 @@
 
 </html>
 
-<!-- 
-
-// controller.php
-
-session_start();
-
-
-$searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
-
-$globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
-
-$valeurFiltre = $globalSearch;
-
-if ($searchTerm) {
-  $valeurFiltre = $searchTerm;
-} -->
-
-

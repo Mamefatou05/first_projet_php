@@ -337,7 +337,9 @@
                         <?php endif; ?>
                     </div>
 
-
+                    <?php if (!$at_least_one_selected) : ?>
+            <p style="color: red;">Veuillez sélectionner au moins une promotion.</p>
+        <?php endif; ?>
                 </div>
 
                 <div class="dispo">

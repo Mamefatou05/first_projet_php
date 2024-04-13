@@ -1,5 +1,3 @@
-
-   <?php
-
-    include("../template/home.php");
-  ?>
+<?php
+  include("../template/home.php");
+?>

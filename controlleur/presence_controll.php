@@ -2,42 +2,25 @@
 
 include '../models/fonction_pre.php';
 include '../models/model.php';
-include_once "../models/fonction_Pro.php";
 
-$activePromotion = getActivePromotion();
-
-$promotions = findPromotion() ;
+session_start();
 
 
-$Allpresence = findAllPresence();
+$Presence = findAllPresence();
 
 
-
- if ($activePromotion !== null) {
-
-    $Allpresence = array_filter($Allpresence, function($presence) use ($activePromotion) {
-        return $presence['promotion'] === $activePromotion['libelle'];
-     });
- }    
-
-$globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
-$valeurFiltre = $globalSearch;
-
-// Filtrer la liste des étudiants si une valeur de recherche est fournie
-if (!empty($valeurFiltre)) {
-    $Allpresence= array_filter($Allpresence, function($presence) use ($valeurFiltre) {
-        return stripos($presence['matricule'], $valeurFiltre) !== false ;
-    });
-}
+$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : null;
 
 
 
+     $Allpresence = filterByActivePromotion($Presence , $active_promotion, 'promotion');
+    
+// var_dump($Allpresence);
 
 
 // Récupération des données de présence
 
 // Gestion des filtres
-session_start();
 if (isset($_POST['filter_submit'])) {
     $_SESSION['selected_referentiel'] = $_POST['referentiel'] ?? '';
     $_SESSION['selected_statut'] = $_POST['statut'] ?? '';
@@ -62,6 +45,15 @@ $selectedStatut = $_POST['statut'] ?? '';
 $selectedDate = $_POST['date'] ?? ''; 
 
 
+// var_dump($selectedReferentiel);
+
+// var_dump($selectedStatut);
+// var_dump($selectedDate);
+
+
+
+
+
 $filteredPresence = [];
 foreach ($Allpresence as $presenceItem) {
     if (($selectedReferentiel === '' || $presenceItem['referentiel'] === $selectedReferentiel) &&
@@ -71,6 +63,7 @@ foreach ($Allpresence as $presenceItem) {
     }
 }
 
+
 // Pagination
 $perPage = 5; 
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
@@ -78,6 +71,28 @@ $paginationData = paginate($filteredPresence, $perPage, $page);
 $filteredPresence = $paginationData['items'];
 $totalPages = $paginationData['totalPages'];
 $currentpage = $paginationData['currentPage'];
+
+
+
+// $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
+// $valeurFiltre = $globalSearch;
+
+// if (!empty($valeurFiltre)) {
+
+//     $Allpresence= array_filter($Allpresence, function($presence) use ($valeurFiltre) {
+
+//         return stripos($presence['matricule'], $valeurFiltre) !== false ;
+
+
+//     });
+//     var_dump($Allpresence);
+
+// }
+
+var_dump($Allpresence);
+
+
+
 
 include '../template/presence.html.php';
 

@@ -33,17 +33,26 @@
                     <div>Date de Fin</div>
                     <div>Action</div>
                 </div>
-                <div class="cont-liste">
-                    <?php foreach ($paginationData['items']  as $promotion) : ?>
-                        <div class="Promotions">
-                            <div class="lib-promo"><?= $promotion['libelle'] ?></div>
-                            <div><?= $promotion['date_debut'] ?></div>
-                            <div><?= $promotion['date_fin'] ?></div>
-                            <div><?= $promotion['active'] ?></div>
 
-                        </div>
-                    <?php endforeach; ?>
+ 
+<div class="cont-liste">
+    <form method="post">
+        <?php foreach ($Allpromotions as $promotion) : ?>
+            <div class="Promotions">
+                <div class="lib-promo"><?= $promotion['libelle'] ?></div>
+                <div><?= $promotion['date_debut'] ?></div>
+                <div><?= $promotion['date_fin'] ?></div>
+                <div>
+                    <input type="radio" name="promotion_libelle" value="<?= $promotion['libelle'] ?>" <?php echo PromotionChecked($promotion['libelle'], $selected_promotion_libelle) ? 'checked' : ''; ?> onchange="this.form.submit()">
                 </div>
+            </div>
+        <?php endforeach; ?>
+
+         
+    </form>
+</div>
+
+
             </div>
 
 
