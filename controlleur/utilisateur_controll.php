@@ -17,6 +17,9 @@ $Apprenants = findAllapprenant();
 
      $Allstudent = array_filter($Apprenants, function($apprenant) use ($activePromotion) {
         return $apprenant['promotion'] === $activePromotion['libelle'];
+
+        var_dump( $activePromotion['libelle'] ) ;
+         die ();
      });
  }    
 

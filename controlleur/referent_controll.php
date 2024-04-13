@@ -3,33 +3,31 @@
 include "../models/fonction_ref.php";
 include_once "../models/fonction_Pro.php";
 
-
-
-
-
 $activePromotion = getActivePromotion();
-
 
 $promotions = findPromotion() ;
 
-$AllReferentiels = findAllReference();
+
+$AllReference = findAllReference();
 
 
 
 
  if ($activePromotion !== null) {
 
-    $AllReferentiels= array_filter($AllReferentiels, function($referentiel) use ($activePromotion) {
-        return $referentiel['promotion'] === $activePromotion['libelle'];
+    $AllReference = array_filter($AllReference, function($ref) use ($activePromotion) {
+
+        return $ref['promotion'] === $activePromotion['libelle'];
      });
+
  }    
 
 $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
 $valeurFiltre = $globalSearch;
 
 if (!empty($valeurFiltre)) {
-    $AllReferentiels = array_filter($AllReferentiels, function($referentiel) use ($valeurFiltre) {
-        return stripos($referentiel['nom'], $valeurFiltre) !== false ;
+    $AllReference= array_filter($$AllReference, function($ref) use ($valeurFiltre) {
+        return stripos($ref['nom'], $valeurFiltre) !== false ;
     });
 }
 

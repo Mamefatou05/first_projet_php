@@ -79,7 +79,6 @@ $filteredPresence = $paginationData['items'];
 $totalPages = $paginationData['totalPages'];
 $currentpage = $paginationData['currentPage'];
 
-// Affichage de la vue
 include '../template/presence.html.php';
 
 ?>

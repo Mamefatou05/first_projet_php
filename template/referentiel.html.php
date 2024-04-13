@@ -11,7 +11,7 @@
     </div>
     <div class="referent">
         <div class="list-ref">
-            <?php foreach ($AllReferentiels as $ref) : ?>
+            <?php foreach ($AllReference as $ref) : ?>
                 <div class="ref-classe">
                     <div class="dot"><i class="fa-solid fa-ellipsis"></i></div>
                     <div class="img-titre">

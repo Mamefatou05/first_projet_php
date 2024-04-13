@@ -10,21 +10,21 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'HACKEUSE',
             'etat' => 'Active',
-            'promotion' => 'Promotion6'
+            'promotion' => 'Promotion 6'
         ],
 
         [
             'image' => '../public/image/classe.jpg',
             'nom' => 'HACKEUSE',
             'etat' => 'Active',
-            'promotion' => 'Promotion6'
+            'promotion' => 'Promotion 6'
         ],
 
         [
             'image' => '../public/image/classe.jpg',
             'nom' => 'REFERENT DIGITAL',
             'etat' => 'Active',
-            'promotion' => 'Promotion6'
+            'promotion' => 'Promotion 6'
 
         ],
 
@@ -33,7 +33,7 @@ function findAllReference()
             'image' =>  '../public/image/classe.jpg',
             'nom' => 'DEV WEB',
             'etat' => 'Active',
-            'promotion' => 'Promotion6'
+            'promotion' => 'Promotion 6'
 
         ],
 
@@ -42,7 +42,7 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'AWS',
             'etat' => 'Active',
-            'promotion' => 'Promotion6'
+            'promotion' => 'Promotion 6'
 
         ],
 
@@ -51,7 +51,7 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'DEV DATA',
             'etat' => 'Active',
-            'promotion' => 'Promotion6'
+            'promotion' => 'Promotion 6'
 
 
         ],
@@ -59,7 +59,7 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'REFERENT DIGITAL',
             'etat' => 'Active',
-            'promotion' => 'Promotion4'
+            'promotion' => 'Promotion 4'
 
         ],
 
@@ -68,7 +68,7 @@ function findAllReference()
             'image' =>  '../public/image/classe.jpg',
             'nom' => 'DEV WEB',
             'etat' => 'Active',
-            'promotion' => 'Promotion4'
+            'promotion' => 'Promotion 4'
 
         ],
 
@@ -76,7 +76,7 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'DEV DATA',
             'etat' => 'Active',
-            'promotion' => 'Promotion4'
+            'promotion' => 'Promotion 4'
 
 
         ],
@@ -84,7 +84,7 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'REFERENT DIGITAL',
             'etat' => 'Active',
-            'promotion' => 'Promotion5'
+            'promotion' => 'Promotion 5'
 
         ],
 
@@ -93,7 +93,7 @@ function findAllReference()
             'image' =>  '../public/image/classe.jpg',
             'nom' => 'DEV WEB',
             'etat' => 'Active',
-            'promotion' => 'Promotion5'
+            'promotion' => 'Promotion 5'
 
         ],
 
@@ -101,7 +101,7 @@ function findAllReference()
             'image' => '../public/image/classe.jpg',
             'nom' => 'DEV DATA',
             'etat' => 'Active',
-            'promotion' => 'Promotion5'
+            'promotion' => 'Promotion 5'
 
 
         ],

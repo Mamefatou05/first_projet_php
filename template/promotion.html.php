@@ -34,12 +34,12 @@
                     <div>Action</div>
                 </div>
                 <div class="cont-liste">
-                    <?php foreach ($paginationData as $promo) : ?>
+                    <?php foreach ($paginationData['items']  as $promotion) : ?>
                         <div class="Promotions">
-                            <div class="lib-promo"><?= $promo['libelle'] ?></div>
-                            <div><?= $promo['date_debut'] ?></div>
-                            <div><?= $promo['date_fin'] ?></div>
-                            <div><?= $promo['active'] ?></div>
+                            <div class="lib-promo"><?= $promotion['libelle'] ?></div>
+                            <div><?= $promotion['date_debut'] ?></div>
+                            <div><?= $promotion['date_fin'] ?></div>
+                            <div><?= $promotion['active'] ?></div>
 
                         </div>
                     <?php endforeach; ?>

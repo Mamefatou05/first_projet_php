@@ -39,9 +39,6 @@
       } else {
         include "../template/connexion.html.php";
       }
-
-
-
       ?>
 
     </div>
