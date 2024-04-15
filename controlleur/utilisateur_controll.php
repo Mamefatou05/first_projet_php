@@ -4,50 +4,63 @@ include "../models/fonction_app.php";
 include "../models/model.php";
 include_once "../models/fonction_Pro.php";
 
+session_start();
+
+$filename = '../DATA/apprenant.csv';
+
+$Apprenants = readFromCsv($filename);
 
 
-
-$Apprenants = findAllapprenant();
-
+$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] :"Promotion 1";
 
 
- if ($activePromotion !== null) {
+// var_dump($active_promotion);
 
-     $Allstudent = array_filter($Apprenants, function($apprenant) use ($activePromotion) {
-        return $apprenant['promotion'] === $activePromotion['libelle'];
 
-        var_dump( $activePromotion['libelle'] ) ;
-         die ();
-     });
- }    
+$Allstudent = filterByActivePromotion($Apprenants, $active_promotion);
+    
+
+
 
 $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
 $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
 $valeurFiltre = ($searchTerm !== '') ? $searchTerm : $globalSearch;
 
 if (!empty($valeurFiltre)) {
-    $Allstudent = array_filter($Allstudent, function($student) use ($valeurFiltre) {
+    $Allstudent = array_filter($Allstudent , function($student) use ($valeurFiltre) {
         return stripos($student['nom'], $valeurFiltre) !== false || stripos($student['prenom'], $valeurFiltre) !== false;
     });
 }
 
-$totalItems = count($Allstudent);
+// var_dump($Apprenants) ;
+// die ();
 
 
-// $perPage = isset($_SESSION['perPage']) ? $_SESSION['perPage'] : 1;
 
-// if(isset($_POST['perPage'])) {
-//     $_SESSION['perPage'] = (int)$_POST['perPage'];
-//     $perPage = $_SESSION['perPage'];
-// }
-$perPage = 4 ;
+$perPage = 3 ;
 
+// Page actuelle
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
-$totalPages = $paginationData['totalPages'];
-$currentpage = $paginationData['currentPage'];
+
+// Pagination des données filtrées
 $paginationData = paginate($Allstudent, $perPage, $page);
 
+// Récupérer les éléments paginés
+// $Allstudent = $paginationData['items'];
+
+// Nombre total de pages
+$totalPages = $paginationData['totalPages'];
+
+// Page actuelle
+$currentpage = $paginationData['currentPage'];
+
+// Nombre total d'éléments
+$totalItems = $paginationData['totalItems'];
+
+var_dump($totalItems);
 
 include "../template/utilisateur.html.php";
+
+
 
 ?>

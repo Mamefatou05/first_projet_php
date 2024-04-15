@@ -1,4 +1,10 @@
 <?php
+
+function redirect($url)
+{
+    header('Location:' . $url);
+    exit();
+}
 function paginate($items, $perPage, $page)
 {
     $totalItems = count($items); // Nombre total d'éléments

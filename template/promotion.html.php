@@ -50,8 +50,6 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
-
                     </form>
                 </div>
             </div>
@@ -81,10 +79,7 @@
                                 <button type="submit" <?= ($currentpage >= $totalPages) ? 'disabled' : '' ?>><i class="fas fa-angle-right"></i></button>
                             </form>
                         </span>
-
                     </div>
-
-
                 </div>
             </div>
         </div>

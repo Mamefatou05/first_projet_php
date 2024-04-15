@@ -7,15 +7,13 @@ session_start();
 
 
 
-$filename = '../DATA/presence.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
+$filename = '../DATA/presence.csv';
 
-$Presence = readFromCSV($filename);
+$Presence = readFromCsv($filename);
 
+$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] :"Promotion 1" ;
 
-$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : null;
-
-
-var_dump($active_promotion);
+// var_dump($active_promotion);
 
 
      $Allpresence = filterByActivePromotion($Presence , $active_promotion);
@@ -34,7 +32,7 @@ if (!empty($valeurFiltre)) {
 
 
     });
-    var_dump($Allpresence);
+    // var_dump($Allpresence);
 
 }
 
@@ -67,13 +65,6 @@ $selectedStatut = $_POST['statut'] ?? '';
 $selectedDate = $_POST['date'] ?? ''; 
 
 
-// var_dump($selectedReferentiel);
-
-// var_dump($selectedStatut);
-// var_dump($selectedDate);
-
-
-
 
 
 $filteredPresence = [];
@@ -84,7 +75,7 @@ foreach ($Allpresence as $presenceItem) {
         $filteredPresence[] = $presenceItem;
     }
 }
-var_dump($filteredPresence);
+// var_dump($filteredPresence);
 
 
 
@@ -113,5 +104,7 @@ $totalItems = $paginationData['totalItems'];
 
 
 include '../template/presence.html.php';
+
+
 
 ?>

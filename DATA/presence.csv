@@ -1,22 +1,22 @@
 matricule,nom,prenom,telephone,referentiel,heure_arrive,status,promotion,date
-P6_DEVWEB_2024_001,Diop,Mamadou,777220308,Developpement Web,06:00,absent,Promotion 6,2024-01-01
-P6_DEVWEB_2024_002,Mbsow,Aminata,777220308,Developpement Data,07:00,present,Promotion 6,2024-01-01
-P6_DEVWE_2024_003,Mbow,Moussa,777220308,Developpement Web,-,absent,Promotion 6,2024-01-01
-P6_REFDIG_2024_004,Kane,Fatou,777220308,Referent Digital,08:00,present,Promotion 6,2024-01-01
-P6_DEVWEB_2024_005,Seck,Ousmane,777220308,Developpement Web,07:00,present,Promotion 6,2024-01-01
-P6_AWS_2024_006,Ba,Mariama,777220308,Developpement Data,-,absent,Promotion 6,2024-01-01
-P6_DEVWEB_2024_007,Ndiaye,Abdoulaye,777220308,AWS,07:40,present,Promotion 6,2024-01-01
-P6_REFDIG_2024_008,Ndiaye,Awa,777220308,Referent Digital,-,present,Promotion 6,2024-01-01
-P6_DEVWEB_2024_009,Diop,Sokhna,777220308,Developpement Web,-,absent,Promotion 6,2024-01-01
-P4_DEVDATA_2022_010,Ba,Cheikh,777220308,Developpement Data,07:00,present,Promotion 4,2022-02-01
-P3_DEVWEB_2021_011,Fall,Ndeye,777220308,Developpement Data,06:00,absent,Promotion 3,2021-02-01
-P3_DEVDATA_2021_012,Cisse,Ibrahima,777220308,Developpement Data,07:00,present,Promotion 3,2021-02-01
-P3_DEVWEB_2021_013,Sylla,Fatoumata,777220308,Developpement Web,-,absent,Promotion 3,2021-02-01
-P2_REFDIG_2020_014,Diagne,Mouhamed,777220308,Referent Digital,08:00,present,Promotion 2,2020-02-01
-P2_DEVWEB_2020_015,Niang,Khadim,777220308,AWS,07:00,present,Promotion 2,2020-02-01
-P2_AWS_2020_016,Ba,Sokhna,777220308,Referent Digital,-,absent,Promotion 2,2020-02-01
-P1_DEVWEB_2019_017,Thiam,Sokhna,777220308,Developpement Web,07:40,present,Promotion 1,2019-02-01
-P1_REFDIG_2019_018,Diallo,Moussa,777220308,Referent Digital,-,absent,Promotion 1,2019-01-01
-P1_DEVWEB_2019_019,Ndiaye,Aminata,777220308,Developpement Web,-,absent,Promotion 1,2019-01-01
+P6_DEVWEB_2024_001,Diop,Mamadou,777220308,Developpement Web,06:00,absent,Promotion 6,2024/01/01
+P6_DEVWEB_2024_002,Mbsow,Aminata,777220308,Developpement Data,07:00,present,Promotion 6,2024/01/02
+P6_DEVWE_2024_003,Mbow,Moussa,777220308,Developpement Web,-,absent,Promotion 6,2024/01/01
+P6_REFDIG_2024_004,Kane,Fatou,777220308,Referent Digital,08:00,present,Promotion 6,2024/01/01
+P6_DEVWEB_2024_005,Seck,Ousmane,777220308,Developpement Web,07:00,present,Promotion 6,2024/01/01
+P6_AWS_2024_006,Ba,Mariama,777220308,Developpement Data,-,absent,Promotion 6,2024/01/01
+P6_DEVWEB_2024_007,Ndiaye,Abdoulaye,777220308,AWS,07:40,present,Promotion 6,2024/01/01
+P6_REFDIG_2024_008,Ndiaye,Awa,777220308,Referent Digital,-,present,Promotion 6,2024/01/01
+P6_DEVWEB_2024_009,Diop,Sokhna,777220308,Developpement Web,-,absent,Promotion 6,2024/01/01
+P4_DEVDATA_2022_010,Ba,Cheikh,777220308,Developpement Data,07:00,present,Promotion 4,2022/02/01
+P3_DEVWEB_2021_011,Fall,Ndeye,777220308,Developpement Data,06:00,absent,Promotion 3,2021/02/01
+P3_DEVDATA_2021_012,Cisse,Ibrahima,777220308,Developpement Data,07:00,present,Promotion 3,2021/02/01
+P3_DEVWEB_2021_013,Sylla,Fatoumata,777220308,Developpement Web,-,absent,Promotion 3,2021/02/01
+P2_REFDIG_2020_014,Diagne,Mouhamed,777220308,Referent Digital,08:00,present,Promotion 2,2020/02/01
+P2_DEVWEB_2020_015,Niang,Khadim,777220308,AWS,07:00,present,Promotion 2,2020/02/01
+P2_AWS_2020_016,Ba,Sokhna,777220308,Referent Digital,-,absent,Promotion 2,2020/02/01
+P1_DEVWEB_2019_017,Thiam,Sokhna,777220308,Developpement Web,07:40,present,Promotion 1,2019/02/01
+P1_REFDIG_2019_018,Diallo,Moussa,777220308,Referent Digital,-,absent,Promotion 1,2019/01/01
+P1_DEVWEB_2019_019,Ndiaye,Aminata,777220308,Developpement Web,-,absent,Promotion 1,2019/01/01
 P5_DEVWEB_2024_020,Camara,Papa,777220308,Developpement Web,07:00,present,Promotion 5,2021/01/01
 P6_DEVWEB_2024_021,Diop,Aissatou,777220308,Developpement Web,07:00,present,Promotion 6,2021/01/01

@@ -13,22 +13,29 @@ $Referent = readFromCSV($filename);
 
 
 
-$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : null;
+$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : "Promotion 1";
+
+// var_dump($active_promotion);
 
 
-
-$AllReference = filterByActivePromotion($Referent , $active_promotion);
+$AllReferentiel = filterByActivePromotion($Referent , $active_promotion);
     
 
 
-$globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
-$valeurFiltre = $globalSearch;
+// $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
+// $valeurFiltre = $globalSearch;
 
-if (!empty($valeurFiltre)) {
-    $AllReference= array_filter($$AllReference, function($ref) use ($valeurFiltre) {
-        return stripos($ref['nom'], $valeurFiltre) !== false ;
-    });
-}
+// if (!empty($valeurFiltre)) {
+
+//     $AllReferentiel= array_filter($AllReference, function($presence) use ($valeurFiltre) {
+
+//         return stripos($presence['matricule'], $valeurFiltre) !== false ;
+
+
+//     });
+//     // var_dump($AllReference);
+
+// }
 
 
 

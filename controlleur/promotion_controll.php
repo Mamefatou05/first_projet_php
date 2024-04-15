@@ -8,7 +8,14 @@ session_start();
 
 
 // Récupérer les promotions
-$promotions = findPromotion();
+
+
+$filename = '../DATA/promotion.csv';
+
+$promotions= readFromCsv($filename);
+
+
+
 
 $selected_promotion_libelle = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : "Promotion 1";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promotion_libelle'])) {
@@ -18,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promotion_libelle'])) 
     // Mettre à jour la session avec la promotion cochée
     $_SESSION['selected_promotion'] = $selected_promotion_libelle;
 }
+// var_dump($selected_promotion_libelle) ;
+
 
 $perPage = 3 ;
 
@@ -39,7 +48,7 @@ $currentpage = $paginationData['currentPage'];
 // Nombre total d'éléments
 $totalItems = $paginationData['totalItems'];
 
-var_dump($totalItems);
+// var_dump($totalItems);
 
 
 $searchpromo= isset($_POST['cherch']) ? $_POST['cherch'] : '';

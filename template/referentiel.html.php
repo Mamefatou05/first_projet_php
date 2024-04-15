@@ -9,9 +9,16 @@
             </ul>
         </div>
     </div>
+    <div class="titre-apprenant">
+        <div>
+            <span>Promotion:</span>
+            <span>(<?= $active_promotion ?>)</span>
+        </div>
+    </div>
+
     <div class="referent">
         <div class="list-ref">
-            <?php foreach ($AllReference as $ref) : ?>
+            <?php foreach ($AllReferentiel as $ref) : ?>
                 <div class="ref-classe">
                     <div class="dot"><i class="fa-solid fa-ellipsis"></i></div>
                     <div class="img-titre">

@@ -842,14 +842,14 @@ body {
 
   }
   .milieu-user .register3 .titre-register{
-    height: 43px;
     width: 100%;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     
-  }
+  } 
   .milieu-user .register3 .titre-register div:first-child .nbre{
     font-weight: bold;
     color: #029287;
@@ -858,8 +858,9 @@ body {
   
   .milieu-user .register3 .titre-register .button-list{
     width: 45%;
-    height: 90%;
+    height: 40px;
     display: flex;
+    
   
   }
   .milieu-user .register3 .titre-register .button-list .btn-popup{
@@ -869,6 +870,9 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
   }
   
@@ -1084,7 +1088,7 @@ body {
   }  
   .search-pre{
     width: 45%;
-    height: 80px;
+    height: 75px;
     display: flex;
     flex-direction: row;
   }
@@ -1103,14 +1107,11 @@ body {
    
   }
   .search-pre .raf{
+    width: 45%;
+
         background: #029287;
 
   }
-  
-  
-  
-  
-   
   
   .search-pre .raf button{
     width: 100%;
@@ -1118,7 +1119,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background: #029287;
+    background: transparent;
   }
   
   
@@ -1167,6 +1168,14 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+  }
+  .dispo .pagination button {
+
+    border: none;
+    background: none;
+    margin: 10px;
+
   }
   
   

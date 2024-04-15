@@ -14,7 +14,7 @@
     <div class="titre-apprenant">
         <div>
             <span>Promotion:</span>
-            <span>(<?= $activePromotion  ?>)</span>
+            <span>(<?= $active_promotion ?>)</span>
         </div>
         <div>
             <span>Reférentiels:</span>
@@ -31,7 +31,7 @@
             <div class="List-App">
                 <div class="titre-register">
                     <div>
-                        <span>Selectionner une ou plusieurs référentiels</span><span class="nbre">(<?= $totalItems ?>)</span>
+                        <span>Listes des apprenants</span><span class="nbre">(<?= $totalItems ?>)</span>
                     </div>
                     <div class="button-list">
                         <div class="btn-popup btn5">
@@ -283,10 +283,6 @@
                         <!-- <div class="popup" id="insert-masse"></div>
                                     <div class="popup" id="fichier-model"></div> -->
                     </div>
-
-
-
-
                 </div>
                 <form method="POST" action="">
 
@@ -296,9 +292,7 @@
                         </span>
                     </div>
                 </form>
-
                 <div><img id="fichier" src="../public/image/telecharger.png" alt="" /></div>
-
                 <div class="liste-apprenant">
                     <div class="titre-liste">
                         <div>Image</div>
@@ -309,8 +303,6 @@
                         <div>Téléphone</div>
                         <div>Actions</div>
                     </div>
-
-
                     <div class="cont-liste">
                         <?php if (empty($paginationData['items'])) : ?>
                             <div>l'apprennant n'existe pas</div>
@@ -337,9 +329,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <?php if (!$at_least_one_selected) : ?>
-            <p style="color: red;">Veuillez sélectionner au moins une promotion.</p>
-        <?php endif; ?>
+                   
                 </div>
 
                 <div class="dispo">
@@ -354,32 +344,27 @@
                     </div>
 
                     <div class="pagination">
-                        <span>
-                            <form action="" method="POST">
-                                <input type="hidden" name="page" value="<?= ($paginationData['currentPage'] - 1) ?>">
-                                <?php if ($paginationData['currentPage'] > 1) : ?>
-                                    <button type="submit"><i class="fas fa-angle-left"></i></button>
-                                <?php else : ?>
-                                    <!-- Désactiver le bouton si c'est la première page -->
-                                    <button type="button" disabled><i class="fas fa-angle-left"></i></button>
-                                <?php endif; ?>
-                            </form>
-                        </span>
-                        <span>Page <?= $paginationData['currentPage'] ?> - <?= $paginationData['totalPages'] ?></span>
-                        <span>
-                            <form action="" method="POST">
-                                <input type="hidden" name="page" value="<?= ($paginationData['currentPage'] + 1) ?>">
-                                <?php if ($paginationData['currentPage'] < $paginationData['totalPages']) : ?>
-                                    <button type="submit"><i class="fas fa-angle-right"></i></button>
-                                <?php else : ?>
-                                    <!-- Désactiver le bouton si c'est la dernière page -->
-                                    <button type="button" disabled><i class="fas fa-angle-right"></i></button>
-                                <?php endif; ?>
-                            </form>
-                        </span>
+                        <div class="pagination">
+                            <span>
+                                <form action="" method="POST">
+                                    <input type="hidden" name="page" value="<?= max(1, $currentpage - 1) ?>">
+                                    <button type="submit" <?= ($currentpage <= 1) ? 'disabled' : '' ?>><i class="fas fa-angle-left"></i></button>
+                                </form>
+                            </span>
+                            <span>Page <?= $currentpage ?> sur <?= $totalPages ?></span>
+                            <span>
+                                <form action="" method="POST">
+                                    <input type="hidden" name="page" value="<?= min($totalPages, $currentpage + 1) ?>">
+                                    <button type="submit" <?= ($currentpage >= $totalPages) ? 'disabled' : '' ?>><i class="fas fa-angle-right"></i></button>
+                                </form>
+                            </span>
+
+                        </div>
+
 
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="cree-list">
@@ -388,3 +373,9 @@
         </div>
     </div>
 </div>
+
+ <!-- <?php 
+                    // if (!$at_least_one_selected) : ?>
+                        <p style="color: red;">Veuillez sélectionner au moins une promotion.</p>
+                        <?php
+                //  endif; ?> -->
