@@ -8,6 +8,16 @@
             </ul>
         </div>
     </div>
+    <div class="titre-apprenant">
+        <div>
+            <span>Promotion:</span>
+            <span>(<?=$active_promotion ?>)</span>
+        </div>
+        <div>
+            <span>Reférentiels:</span>
+            <span><?= $selectedReferentiel ?></span>
+        </div>
+    </div>
     <div class="milieu-user">
         <form action="" method="POST">
             <div class=" search-pre">

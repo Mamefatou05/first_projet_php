@@ -14,7 +14,7 @@
     <div class="titre-apprenant">
         <div>
             <span>Promotion:</span>
-            <span>Promotion 6</span>
+            <span>(<?= $activePromotion  ?>)</span>
         </div>
         <div>
             <span>Reférentiels:</span>
@@ -31,7 +31,7 @@
             <div class="List-App">
                 <div class="titre-register">
                     <div>
-                        <span>Selectionner une ou plusieurs référentiels</span><span class="nbre">(50)</span>
+                        <span>Selectionner une ou plusieurs référentiels</span><span class="nbre">(<?= $totalItems ?>)</span>
                     </div>
                     <div class="button-list">
                         <div class="btn-popup btn5">

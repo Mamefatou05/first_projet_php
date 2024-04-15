@@ -4,9 +4,7 @@ include "../models/fonction_app.php";
 include "../models/model.php";
 include_once "../models/fonction_Pro.php";
 
-$activePromotion = getActivePromotion();
 
-$promotions = findPromotion() ;
 
 
 $Apprenants = findAllapprenant();

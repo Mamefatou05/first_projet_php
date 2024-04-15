@@ -16,13 +16,17 @@
                     <span>Listes des promotion</span><span class="nbre">(<?= $totalItems ?>)</span>
                 </div>
                 <div>
-                    <div class="cherche-promo">
-                        <form action="" method="POST">
-                            <input type="text" name="search" placeholder="rechercher" />
-                            <button type="submit"><i class="fa fa-search fa-xm"></i></button>
-                        </form>
-                    </div>
-                    <button><a href="?page=home&m=2">Nouvelle</a></button>
+                    <form method="POST" action="">
+                        <div id="search">
+                            <span>
+                                <input value="<?= $searchpromo ?>" type="text" name="cherch" placeholder="Rechercher" />
+                            </span>
+                            <span>
+                                <a href="#"><i class="fa fa-search fa-xm"></i></a>
+                            </span>
+                        </div>
+                    </form>
+                    <button id="nvel"><a href="?m=2">Nouvelle</a></button>
                 </div>
             </div>
 
@@ -34,28 +38,23 @@
                     <div>Action</div>
                 </div>
 
- 
-<div class="cont-liste">
-    <form method="post">
-        <?php foreach ($Allpromotions as $promotion) : ?>
-            <div class="Promotions">
-                <div class="lib-promo"><?= $promotion['libelle'] ?></div>
-                <div><?= $promotion['date_debut'] ?></div>
-                <div><?= $promotion['date_fin'] ?></div>
-                <div>
-                    <input type="radio" name="promotion_libelle" value="<?= $promotion['libelle'] ?>" <?php echo PromotionChecked($promotion['libelle'], $selected_promotion_libelle) ? 'checked' : ''; ?> onchange="this.form.submit()">
+                <div class="cont-liste">
+                    <form method="post">
+                        <?php foreach ($paginationData['items'] as $promotion) : ?>
+                            <div class="Promotions">
+                                <div class="lib-promo"><?= $promotion['libelle'] ?></div>
+                                <div><?= $promotion['date_debut'] ?></div>
+                                <div><?= $promotion['date_fin'] ?></div>
+                                <div>
+                                    <input type="radio" name="promotion_libelle" value="<?= $promotion['libelle'] ?>" <?php echo PromotionChecked($promotion['libelle'], $selected_promotion_libelle) ? 'checked' : ''; ?> onchange="this.form.submit()">
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+
+
+                    </form>
                 </div>
             </div>
-        <?php endforeach; ?>
-
-         
-    </form>
-</div>
-
-
-            </div>
-
-
             <div class="dispo">
 
                 <div>
@@ -68,29 +67,23 @@
                 </div>
 
                 <div class="pagination">
-                    <span>
-                        <form action="" method="POST">
-                            <input type="hidden" name="page" value="<?= ($paginationData['currentPage'] - 1) ?>">
-                            <?php if ($paginationData['currentPage'] > 1) : ?>
-                                <button type="submit"><i class="fas fa-angle-left"></i></button>
-                            <?php else : ?>
-                                <!-- Désactiver le bouton si c'est la première page -->
-                                <button type="button" disabled><i class="fas fa-angle-left"></i></button>
-                            <?php endif; ?>
-                        </form>
-                    </span>
-                    <span>Page <?= $paginationData['currentPage'] ?> - <?= $paginationData['totalPages'] ?></span>
-                    <span>
-                        <form action="" method="POST">
-                            <input type="hidden" name="page" value="<?= ($paginationData['currentPage'] + 1) ?>">
-                            <?php if ($paginationData['currentPage'] < $paginationData['totalPages']) : ?>
-                                <button type="submit"><i class="fas fa-angle-right"></i></button>
-                            <?php else : ?>
-                                <!-- Désactiver le bouton si c'est la dernière page -->
-                                <button type="button" disabled><i class="fas fa-angle-right"></i></button>
-                            <?php endif; ?>
-                        </form>
-                    </span>
+                    <div class="pagination">
+                        <span>
+                            <form action="" method="POST">
+                                <input type="hidden" name="page" value="<?= max(1, $currentpage - 1) ?>">
+                                <button type="submit" <?= ($currentpage <= 1) ? 'disabled' : '' ?>><i class="fas fa-angle-left"></i></button>
+                            </form>
+                        </span>
+                        <span>Page <?= $currentpage ?> sur <?= $totalPages ?></span>
+                        <span>
+                            <form action="" method="POST">
+                                <input type="hidden" name="page" value="<?= min($totalPages, $currentpage + 1) ?>">
+                                <button type="submit" <?= ($currentpage >= $totalPages) ? 'disabled' : '' ?>><i class="fas fa-angle-right"></i></button>
+                            </form>
+                        </span>
+
+                    </div>
+
 
                 </div>
             </div>

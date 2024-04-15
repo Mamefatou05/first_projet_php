@@ -6,16 +6,38 @@ include '../models/model.php';
 session_start();
 
 
-$Presence = findAllPresence();
+
+$filename = '../DATA/presence.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
+
+$Presence = readFromCSV($filename);
 
 
 $active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : null;
 
 
+var_dump($active_promotion);
 
-     $Allpresence = filterByActivePromotion($Presence , $active_promotion, 'promotion');
+
+     $Allpresence = filterByActivePromotion($Presence , $active_promotion);
     
 // var_dump($Allpresence);
+
+
+$globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
+$valeurFiltre = $globalSearch;
+
+if (!empty($valeurFiltre)) {
+
+    $Allpresence= array_filter($Allpresence, function($presence) use ($valeurFiltre) {
+
+        return stripos($presence['matricule'], $valeurFiltre) !== false ;
+
+
+    });
+    var_dump($Allpresence);
+
+}
+
 
 
 // Récupération des données de présence
@@ -62,39 +84,34 @@ foreach ($Allpresence as $presenceItem) {
         $filteredPresence[] = $presenceItem;
     }
 }
+var_dump($filteredPresence);
+
 
 
 // Pagination
-$perPage = 5; 
+// Nombre d'éléments par page
+$perPage = 4;
+
+// Page actuelle
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
+
+// Pagination des données filtrées
 $paginationData = paginate($filteredPresence, $perPage, $page);
+
+// Récupérer les éléments paginés
 $filteredPresence = $paginationData['items'];
+
+// Nombre total de pages
 $totalPages = $paginationData['totalPages'];
+
+// Page actuelle
 $currentpage = $paginationData['currentPage'];
 
-
-
-// $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
-// $valeurFiltre = $globalSearch;
-
-// if (!empty($valeurFiltre)) {
-
-//     $Allpresence= array_filter($Allpresence, function($presence) use ($valeurFiltre) {
-
-//         return stripos($presence['matricule'], $valeurFiltre) !== false ;
-
-
-//     });
-//     var_dump($Allpresence);
-
-// }
-
-var_dump($Allpresence);
-
+// Nombre total d'éléments
+$totalItems = $paginationData['totalItems'];
 
 
 
 include '../template/presence.html.php';
 
 ?>
-

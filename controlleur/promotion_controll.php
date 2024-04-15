@@ -3,11 +3,8 @@
 include "../models/fonction_Pro.php";
 include "../models/model.php";
 
-$Allpromotions = findPromotion() ;
 
 session_start();
-
-
 
 
 // Récupérer les promotions
@@ -22,21 +19,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promotion_libelle'])) 
     $_SESSION['selected_promotion'] = $selected_promotion_libelle;
 }
 
- 
-
-
 $perPage = 3 ;
 
+// Page actuelle
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
+
+// Pagination des données filtrées
+$paginationData = paginate($promotions, $perPage, $page);
+
+// Récupérer les éléments paginés
+// $Allpromotions = $paginationData['items'];
+
+// Nombre total de pages
 $totalPages = $paginationData['totalPages'];
+
+// Page actuelle
 $currentpage = $paginationData['currentPage'];
-$paginationData = paginate($Allpromotions, $perPage, $page);
-// var_dump($paginationData);
-// die;
+
+// Nombre total d'éléments
+$totalItems = $paginationData['totalItems'];
+
+var_dump($totalItems);
 
 
+$searchpromo= isset($_POST['cherch']) ? $_POST['cherch'] : '';
+$globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
+$valeurFiltre = ($searchpromo !== '') ? $searchpromo : $globalSearch;
+
+if (!empty($valeurFiltre)) {
+     $paginationData['items'] = array_filter( $paginationData['items'], function($promo) use ($valeurFiltre) {
+        return stripos($promo['libelle'], $valeurFiltre) !== false || stripos($promo['libelle'], $valeurFiltre) !== false;
+    });
+}
 
 include "../template/promotion.html.php";
-
 
 ?>

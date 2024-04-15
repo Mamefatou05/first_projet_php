@@ -1,26 +1,25 @@
 <?php
 
 include "../models/fonction_ref.php";
-include_once "../models/fonction_Pro.php";
+include '../models/model.php';
 
-$activePromotion = getActivePromotion();
-
-$promotions = findPromotion() ;
-
-
-$AllReference = findAllReference();
+session_start();
 
 
 
+$filename = '../DATA/referent.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
 
- if ($activePromotion !== null) {
+$Referent = readFromCSV($filename);
 
-    $AllReference = array_filter($AllReference, function($ref) use ($activePromotion) {
 
-        return $ref['promotion'] === $activePromotion['libelle'];
-     });
 
- }    
+$active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : null;
+
+
+
+$AllReference = filterByActivePromotion($Referent , $active_promotion);
+    
+
 
 $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
 $valeurFiltre = $globalSearch;

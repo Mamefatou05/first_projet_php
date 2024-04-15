@@ -35,6 +35,7 @@
       
         include("../template/partiel/header.html.php");
         require_once '../controlleur/' . $m . '.php';
+        
         include "../template/partiel/footer.html.php";
       } else {
         include "../template/connexion.html.php";
