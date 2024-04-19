@@ -4,7 +4,6 @@ include "../models/fonction_Pro.php";
 include "../models/model.php";
 
 
-session_start();
 
 
 // Récupérer les promotions
@@ -24,8 +23,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['promotion_libelle'])) 
 
     // Mettre à jour la session avec la promotion cochée
     $_SESSION['selected_promotion'] = $selected_promotion_libelle;
+
+    $newPromotions = array();
+    foreach ($promotions as $promo) {
+           
+
+        if ($promo["libelle"] === $selected_promotion_libelle) {
+            
+            $promo["etat"] = '1'; 
+            
+            
+        } else {
+            $promo["etat"] = '0';
+        }
+        $newPromotions[] = $promo;
+
+    }
+
+
+    writeToCsv($filename, $newPromotions);
 }
-// var_dump($selected_promotion_libelle) ;
 
 
 $perPage = 3 ;

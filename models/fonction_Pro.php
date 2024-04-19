@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Fonction pour récupérer les promotions
 // function findPromotion()

@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <form method="POST" action="">
-                        <div id="search">
+                        <div class="cherche-promo">
                             <span>
                                 <input value="<?= $searchpromo ?>" type="text" name="cherch" placeholder="Rechercher" />
                             </span>

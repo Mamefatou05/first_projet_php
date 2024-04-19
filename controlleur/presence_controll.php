@@ -3,7 +3,6 @@
 include '../models/fonction_pre.php';
 include '../models/model.php';
 
-session_start();
 
 
 
@@ -36,8 +35,6 @@ if (!empty($valeurFiltre)) {
 
 }
 
-
-
 // Récupération des données de présence
 
 // Gestion des filtres
@@ -54,6 +51,7 @@ if (isset($_POST['filter_submit'])) {
 
 }
 
+
 // Récupération des référentiels et des statuts
 $referentiels = getAllReferentiels($Allpresence);
 $statuts = getAllStatuts($Allpresence);
@@ -66,6 +64,11 @@ $selectedDate = $_POST['date'] ?? '';
 
 
 
+if (isset($_POST['refresh'])) {
+    unset($_SESSION['selected_referentiel']);
+    unset($_SESSION['selected_statut']);
+    unset($_SESSION['selected_date']); 
+}
 
 $filteredPresence = [];
 foreach ($Allpresence as $presenceItem) {
@@ -75,6 +78,7 @@ foreach ($Allpresence as $presenceItem) {
         $filteredPresence[] = $presenceItem;
     }
 }
+
 // var_dump($filteredPresence);
 
 

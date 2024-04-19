@@ -11,7 +11,7 @@
         <form method="POST" action="">
           <div id="search">
             <span>
-              <input value="<?= $globalSearch ?>" type="text" name="Search" placeholder="Filter" />
+              <input value="" type="search" name="Search" placeholder="Filter" />
             </span>
             <span>
               <a href="#"><i class="fa fa-search fa-xm"></i></a>

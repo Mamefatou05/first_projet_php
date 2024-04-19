@@ -18,7 +18,23 @@
         </div>
         <div>
             <span>Reférentiels:</span>
-            <span>Dev Web/mobile</span>
+            <span>
+
+                <form action="" method="GET"> <!-- Utiliser la méthode GET -->
+                <input type="hidden" name="m" value="5"> </input>
+                    <select name="referentiel" onchange="this.form.submit()">
+                        <option value="">Tous les référentiels</option>
+                        <?php foreach ($referentiels as $referentiel) : ?>
+                            <option value="<?= $referentiel ?>" <?= ($referentiel == $selectedReferentiel) ? 'selected' : '' ?>>
+                                <?= $referentiel ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select> <!-- Options de référentiel -->
+                    </select>
+                </form>
+
+
+            </span>
         </div>
     </div>
     <div class="milieu-user">
@@ -288,7 +304,7 @@
 
                     <div class="cherche-app">
                         <span>
-                            <input value="<?= $searchTerm ?>" type="text" name="search" placeholder="Filter" />
+                            <input value="" type="search" name="search" placeholder="Filter" />
                         </span>
                     </div>
                 </form>
@@ -311,7 +327,7 @@
                                 <div class="apprenants">
 
                                     <div class="icon-app">
-                                        <img src="../public/image/personnes.png" alt="" />
+                                        <img src="../public/image/<?= $student['image'] ?>"alt="" />
                                     </div>
                                     <div class="nom"><?= $student['nom'] ?></div>
                                     <div class="nom"><?= $student['prenom'] ?></div>
@@ -320,8 +336,7 @@
                                     <div><?= $student['telephone'] ?></div>
                                     <div>
                                         <div class="action">
-                                            <input type="checkbox" id="my-checkbox-0" <?php if ($student['action']) : ?> checked <?php endif; ?>>
-                                            <label for="my-checkbox-0"></label>
+                                            <input type="radio" id="my-checkbox-0" <?php if ($student['action']) : ?>  <?php endif; ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -329,7 +344,7 @@
                         <?php endif; ?>
                     </div>
 
-                   
+
                 </div>
 
                 <div class="dispo">
@@ -374,8 +389,5 @@
     </div>
 </div>
 
- <!-- <?php 
-                    // if (!$at_least_one_selected) : ?>
-                        <p style="color: red;">Veuillez sélectionner au moins une promotion.</p>
-                        <?php
-                //  endif; ?> -->
+<!-- 
+ -->

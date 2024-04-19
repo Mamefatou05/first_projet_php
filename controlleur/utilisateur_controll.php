@@ -4,7 +4,6 @@ include "../models/fonction_app.php";
 include "../models/model.php";
 include_once "../models/fonction_Pro.php";
 
-session_start();
 
 $filename = '../DATA/apprenant.csv';
 
@@ -18,19 +17,43 @@ $active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected
 
 
 $Allstudent = filterByActivePromotion($Apprenants, $active_promotion);
-    
+// Gestion des filtres
 
 
 
-$searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
-$globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
-$valeurFiltre = ($searchTerm !== '') ? $searchTerm : $globalSearch;
+if (isset($_GET['referentiel'])) {
 
-if (!empty($valeurFiltre)) {
-    $Allstudent = array_filter($Allstudent , function($student) use ($valeurFiltre) {
-        return stripos($student['nom'], $valeurFiltre) !== false || stripos($student['prenom'], $valeurFiltre) !== false;
-    });
+    $selectedReferentiel = ($_GET['referentiel']);
+
+    $_SESSION['selected_referentiel'] = $selectedReferentiel;
+} else {
+
+    $selectedReferentiel = $_SESSION['selected_referentiel'] ?? '';
 }
+
+$referentiels = getAllReferentiels($Allstudent);
+
+$filteredReferentiel = [];
+foreach ($Allstudent as $AppItem) {
+    if ($selectedReferentiel === '' || $AppItem['referentiel'] === $selectedReferentiel) {
+        $filteredReferentiel[] = $AppItem;
+    }
+}
+
+
+
+
+
+
+// $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
+// $globalSearch = isset($_POST['Search']) ? $_POST['Search'] : '';
+// $valeurFiltre = ($searchTerm !== '') ? $searchTerm : $globalSearch;
+
+// if (!empty($valeurFiltre)) {
+//     $Allstudent = array_filter($Allstudent, function($student) use ($valeurFiltre) {
+//         return stripos($student['nom'], $valeurFiltre) !== false || stripos($student['prenom'], $valeurFiltre) !== false;
+//     });
+// }
 
 // var_dump($Apprenants) ;
 // die ();
@@ -43,7 +66,7 @@ $perPage = 3 ;
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
 
 // Pagination des données filtrées
-$paginationData = paginate($Allstudent, $perPage, $page);
+$paginationData = paginate($filteredReferentiel, $perPage, $page);
 
 // Récupérer les éléments paginés
 // $Allstudent = $paginationData['items'];

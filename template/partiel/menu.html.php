@@ -1,5 +1,5 @@
 
-
+<input type="checkbox" id="menu-toggle" checked>
 <input type="checkbox" id="menu-toggle" />
 <div class="nav-bar">
     <div class="logo">

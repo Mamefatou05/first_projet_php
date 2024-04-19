@@ -231,6 +231,7 @@ body {
     width: 100%;
     min-height: 100vh;
   }
+
   
   .menu-icon {
     margin-left: 5px;
@@ -244,8 +245,7 @@ body {
     display: block;
   }
 
-  
-  
+
   .content-title {
     border-radius: 10px;
     display: flex;
@@ -266,17 +266,18 @@ body {
 
   }
 
+
   #search {
-    width: 250px;
+    width: 200px;
+    height: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background-color: #f5f5f5;
     border-radius: 50px;
-    padding: 10px;
     margin-left: 10px;
-   
+
   }
   
   #search input {
@@ -732,13 +733,16 @@ body {
     }
     
     .referent .nv-ref{
-      flex: 1;
-      height: 220px;
+      width: 230px;
+      height: 300px;
       background: #fff;
       border-radius: 10px;
       padding: 1%;
       margin:1%;
-     
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
     
     }
     
@@ -765,9 +769,9 @@ body {
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin: 1% 27%;
-      width: 45%;
+      width: 100px;
       height: 30px;
+      margin-left: 55px;
       box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.30);
     }
     .referent .nv-ref .btn-enrg a{
@@ -788,10 +792,13 @@ body {
     align-items: center;
     padding: 1%;
   }
-  .titre-apprenant div span:last-child{
+  .titre-apprenant div span:last-child ,.titre-apprenant div span:last-child form select {
     font-weight: bold;
     color: #029287;
   }
+  .titre-apprenant div span:last-child form select option:hover {
+    background-color: #029287; /* Couleur de fond de l'option sélectionnée */
+}
   
   
   .milieu-user{
@@ -1086,12 +1093,18 @@ body {
     display: flex;
     flex-direction: column;
   }  
+  #refresh{
+    width: 100%;
+    display: flex;
+    align-items: space-between; 
+  }
   .search-pre{
     width: 45%;
     height: 75px;
     display: flex;
     flex-direction: row;
   }
+
   .search-pre div{
     margin: 10px;
     padding: 10px;
@@ -1112,6 +1125,9 @@ body {
         background: #029287;
 
   }
+
+ 
+ 
   
   .search-pre .raf button{
     width: 100%;
@@ -1123,7 +1139,7 @@ body {
   }
   
   
-  .search-pre .raf a{
+  .search-pre .raf a , .refreshAll a{
     text-decoration: none;
     color: #fff;  
   }
@@ -1196,7 +1212,6 @@ body {
     padding: 1%;
   } 
   .content-milieu .titre-register{
-    width: 100%;
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -1228,23 +1243,21 @@ body {
   
   
   .content-milieu .titre-register #nvel {
-    width: 34%;
-    height: 100%;
+        width: 84%;
+    height: 87%;
     border: none;
     border-radius: 2px;
     cursor: pointer;
     background: #029287;
   }
-  .cherche-promo{
-    width: 100%;
+  /* .cherche-promo{
     height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #c2c0ca;
     border-radius:50px;
-    padding: 2%;
-  }
+  } */
   .cherche-promo span input{
     width: 100%;
     border: none;
@@ -1608,6 +1621,14 @@ body {
       color: #fff;
       background: #029287;
     }
+
+
+
+  #preview{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
   
   /*  <div>
                         <span>Items par page:</span>

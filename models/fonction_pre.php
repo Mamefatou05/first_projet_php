@@ -266,17 +266,7 @@
 //     return $presence;
 // }
 
-function getAllReferentiels($presence)
-{
-    $referentiels = [];
-    foreach ($presence as $presenceItem) {
-        $referentiel = $presenceItem['referentiel'];
-        if (!in_array($referentiel, $referentiels)) {
-            $referentiels[] = $referentiel;
-        }
-    }
-    return $referentiels;
-}
+
 
 function getAllStatuts($presence)
 {
