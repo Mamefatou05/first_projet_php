@@ -3,7 +3,7 @@
 include "../models/fonction_ref.php";
 include '../models/model.php';
 
-$filename = '../DATA/referent.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
+$filename = '../DATA/referent.csv'; 
 
 
 $active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : "Promotion 1";
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
                 'image' => $image,
                 'libelle' => $libelle,
                 'etat' => 'Active',
-                'promotion' => $active_promotion, // Assurez-vous que $active_promotion est défini
+                'promotion' => $active_promotion, 
                 'description' => $description
             ]
         ]);
