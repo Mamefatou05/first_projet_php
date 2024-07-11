@@ -2,7 +2,7 @@
 include "../models/fonction_ref.php";
 include '../models/model.php';
 
-$filename = '../DATA/referent.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
+$filename = '../DATA/referentiel.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
 
 
 $active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : "Promotion 1";
