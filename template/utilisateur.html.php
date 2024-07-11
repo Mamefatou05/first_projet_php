@@ -19,20 +19,21 @@
         <div>
             <span>Reférentiels:</span>
             <span>
-
-                <form action="" method="GET"> <!-- Utiliser la méthode GET -->
-                <input type="hidden" name="m" value="5"> </input>
-                    <select name="referentiel" onchange="this.form.submit()">
-                        <option value="">Tous les référentiels</option>
-                        <?php foreach ($referentiels as $referentiel) : ?>
-                            <option value="<?= $referentiel ?>" <?= ($referentiel == $selectedReferentiel) ? 'selected' : '' ?>>
-                                <?= $referentiel ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select> <!-- Options de référentiel -->
-                    </select>
+                <form action="" method="get">
+                    <input type="hidden" name="m" value="5"> </input>
+                    <div class="custom-select" onclick="this.classList.toggle('active')">
+                        <div class="select-selected">Référentiels</div>
+                        <div class="select-items">
+                            <?php foreach ($referentiels as $referentiel) : ?>
+                                <div>
+                                    <input type="checkbox" id="<?= $referentiel ?>" name="referentiel[]"  <?= isset($_GET['referentiel']) ? 'active' : '' ?> value="<?= $referentiel ?>" >
+                                    <label for="<?= $referentiel ?>"><?= $referentiel ?></label>
+                                </div>
+                            <?php endforeach ?>
+                            <button class="btn" type="submit">Valider</button>
+                        </div>
+                    </div>
                 </form>
-
 
             </span>
         </div>
@@ -316,6 +317,7 @@
                         <div>Prénom</div>
                         <div>Email</div>
                         <div>Genre</div>
+                        <div>Referentiel</div>
                         <div>Téléphone</div>
                         <div>Actions</div>
                     </div>
@@ -327,16 +329,18 @@
                                 <div class="apprenants">
 
                                     <div class="icon-app">
-                                        <img src="../public/image/<?= $student['image'] ?>"alt="" />
+                                        <img src="../public/image/<?= $student['image'] ?>" alt="" />
                                     </div>
                                     <div class="nom"><?= $student['nom'] ?></div>
                                     <div class="nom"><?= $student['prenom'] ?></div>
                                     <div><?= $student['email'] ?></div>
                                     <div><?= $student['genre'] ?></div>
+                                    <div><?= $student['referentiel'] ?></div>
+
                                     <div><?= $student['telephone'] ?></div>
                                     <div>
                                         <div class="action">
-                                            <input type="radio" id="my-checkbox-0" <?php if ($student['action']) : ?>  <?php endif; ?>>
+                                            <input type="radio" id="my-checkbox-0" <?php if ($student['action']) : ?> <?php endif; ?>>
                                         </div>
                                     </div>
                                 </div>

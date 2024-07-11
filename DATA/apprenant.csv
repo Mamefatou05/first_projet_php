@@ -1,23 +1,44 @@
 image,nom,prenom,email,genre,telephone,promotion,action,referentiel
-personnes.png,Diop,Oumar,diop.oumar@gmail.com,M,777220308,Promotion 6,true,Developpement Web
-personnes.png,Diallo,Awa,diallo.awa@gmail.com,F,777220309,Promotion 2,true,Developpement DATA
-personnes.png,Ndiaye,Mamadou,ndiaye.mamadou@gmail.com,M,777220310,Promotion 3,true,REFERENT DIGITAL
-personnes.png,Fall,Aissatou,fall.aissatou@gmail.com,F,777220311,Promotion 4,true,Developpement Web
-personnes.png,Ba,Abdoulaye,ba.abdoulaye@gmail.com,M,777220312,Promotion 5,true,AWS
-personnes.png,Sylla,Fatou,sylla.fatou@gmail.com,F,777220313,Promotion 6,true,Developpement Web
-personnes.png,Gueye,Abdou,abdou.gueye@gmail.com,M,777220314,Promotion 6,false,REFERENT DIGITAL
-personnes.png,Sarr,Khady,sarr.khady@gmail.com,F,777220315,Promotion 6,false,Developpement DATA
-personnes.png,Niang,Cheikh,niang.cheikh@gmail.com,M,777220316,Promotion 3,false,Developpement Web
-personnes.png,Sow,Mame Diarra,sow.mame.diarra@gmail.com,F,777220317,Promotion 2,false,Developpement Web
-personnes.png,Diagne,Moussa,diagne.moussa@gmail.com,M,777220318,Promotion 6,false,Developpement Web
-personnes.png,Faye,Aissatou,faye.aissatou@gmail.com,F,777220319,Promotion 6,true,REFERENT DIGITAL
-personnes.png,Seck,Moussa,seck.moussa@gmail.com,M,777220320,Promotion 6,true,Developpement DATA
-personnes.png,Traoré,Fatoumata,traore.fatoumata@gmail.com,F,777220321,Promotion 2,true,Developpement Web
-personnes.png,Ndiaye,Samba,ndiaye.samba@gmail.com,M,777220322,Promotion 3,true,Developpement Web
-personnes.png,Camara,Mariama,camara.mariama@gmail.com,F,777220323,Promotion 4,true,Developpement DATA
-personnes.png,Diouf,Mamadou,diouf.mamadou@gmail.com,M,777220324,Promotion 5,true,Developpement Web
-personnes.png,Diop,Aminata,diop.aminata@gmail.com,F,777220325,Promotion 6,false,Developpement DATA
-personnes.png,Sene,Ousmane,sene.ousmane@gmail.com,M,777220326,Promotion 2,false,Developpement DATA
-personnes.png,Diagne,Khady,diagne.khady@gmail.com,F,777220327,Promotion 3,false,REFERENT DIGITAL
-personnes.png,Diop,Ousmane,diop.ousmane@gmail.com,M,777220328,Promotion 4,false,AWS
-personnes.png,Gaye,Fatoumata,gaye.fatoumata@gmail.com,F,777220329,Promotion 5,false,Developpement DATA
+personnes.png,diop,Oumar,diop.oumar@gmail.com,M,777220308,Promotion 6,true,developpement web
+personnes.png,diallo,Awa,diallo.awa@gmail.com,F,777220309,Promotion 2,true,developpement data
+personnes.png,Ndiaye,Mamadou,ndiaye.mamadou@gmail.com,M,777220310,Promotion 3,true,referent digital
+personnes.png,Fall,Aissatou,fall.aissatou@gmail.com,F,777220311,Promotion 4,true,developpement web
+personnes.png,Ba,Abdoulaye,ba.abdoulaye@gmail.com,M,777220312,Promotion 6,true,aws
+personnes.png,Sylla,Fatou,sylla.fatou@gmail.com,F,777220313,Promotion 6,true,developpement web
+personnes.png,Gueye,Abdou,abdou.gueye@gmail.com,M,777220314,Promotion 6,false,referent digital
+personnes.png,Sarr,Khady,sarr.khady@gmail.com,F,777220315,Promotion 6,false,developpement data
+personnes.png,Niang,Cheikh,niang.cheikh@gmail.com,M,777220316,Promotion 3,false,developpement web
+personnes.png,Sow,Mame diarra,sow.mame.diarra@gmail.com,F,777220317,Promotion 2,false,developpement web
+personnes.png,diagne,Moussa,diagne.moussa@gmail.com,M,777220318,Promotion 6,false,developpement web
+personnes.png,Faye,Aissatou,faye.aissatou@gmail.com,F,777220319,Promotion 6,true,referent digital
+personnes.png,Seck,Moussa,seck.moussa@gmail.com,M,777220320,Promotion 6,true,developpement data
+personnes.png,Traoré,Fatoumata,traore.fatoumata@gmail.com,F,777220321,Promotion 2,true,developpement web
+personnes.png,Ndiaye,Samba,ndiaye.samba@gmail.com,M,777220322,Promotion 3,true,developpement web
+personnes.png,Camara,Mariama,camara.mariama@gmail.com,F,777220323,Promotion 4,true,developpement data
+personnes.png,diouf,Mamadou,diouf.mamadou@gmail.com,M,777220324,Promotion 5,true,developpement web
+personnes.png,diop,Aminata,diop.aminata@gmail.com,F,777220325,Promotion 6,false,developpement data
+personnes.png,Sene,Ousmane,sene.ousmane@gmail.com,M,777220326,Promotion 2,false,developpement data
+personnes.png,diagne,Khady,diagne.khady@gmail.com,F,777220327,Promotion 3,false,referent digital
+personnes.png,diop,Ousmane,diop.ousmane@gmail.com,M,777220328,Promotion 6,false,aws
+personnes.png,Gaye,Fatoumata,gaye.fatoumata@gmail.com,F,777220329,Promotion 5,false,developpement data
+personnes.png,diop,Mamadou,diop.mamadou@gmail.com,M,777220308,Promotion 6,true,developpement web
+personnes.png,Mbsow,Aminata,mbsow.aminata@gmail.com,F,777220309,Promotion 6,true,developpement data
+personnes.png,Mbow,Moussa,mbow.moussa@gmail.com,M,777220308,Promotion 6,false,developpement web
+personnes.png,Kane,Fatou,kane.fatou@gmail.com,F,777220308,Promotion 6,true,referent digital
+personnes.png,Seck,Ousmane,seck.ousmane@gmail.com,M,777220308,Promotion 6,true,developpement web
+personnes.png,Ba,Mariama,ba.mariama@gmail.com,F,777220308,Promotion 6,false,developpement data
+personnes.png,Ndiaye,Abdoulaye,ndiaye.abdoulaye@gmail.com,M,777220308,Promotion 6,true,aws
+personnes.png,Ndiaye,Awa,ndiaye.awa@gmail.com,F,777220308,Promotion 6,true,referent digital
+personnes.png,diop,Sokhna,diop.sokhna@gmail.com,F,777220308,Promotion 6,false,developpement web
+personnes.png,Ba,Cheikh,ba.cheikh@gmail.com,M,777220308,Promotion 4,true,developpement data
+personnes.png,Fall,Ndeye,fall.ndeye@gmail.com,F,777220308,Promotion 3,false,developpement data
+personnes.png,Cisse,Ibrahima,cisse.ibrahima@gmail.com,M,777220308,Promotion 3,true,developpement data
+personnes.png,Sylla,Fatoumata,sylla.fatoumata@gmail.com,F,777220308,Promotion 3,false,developpement web
+personnes.png,diagne,Mouhamed,diagne.mouhamed@gmail.com,M,777220308,Promotion 2,true,referent digital
+personnes.png,Niang,Khadim,niang.khadim@gmail.com,M,777220308,Promotion 6,true,aws
+personnes.png,Ba,Sokhna,ba.sokhna@gmail.com,F,777220308,Promotion 2,false,referent digital
+personnes.png,Thiam,Sokhna,thiam.sokhna@gmail.com,F,777220308,Promotion 1,true,developpement web
+personnes.png,diallo,Moussa,diallo.moussa@gmail.com,M,777220308,Promotion 1,false,referent digital
+personnes.png,Ndiaye,Aminata,ndiaye.aminata@gmail.com,F,777220308,Promotion 1,false,developpement web
+personnes.png,Camara,Papa,camara.papa@gmail.com,M,777220308,Promotion 5,true,developpement web
+personnes.png,diop,Aissatou,diop.aissatou@gmail.com,F,777220308,Promotion 6,true,developpement web

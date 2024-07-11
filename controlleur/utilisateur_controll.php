@@ -19,30 +19,31 @@ $active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected
 $Allstudent = filterByActivePromotion($Apprenants, $active_promotion);
 // Gestion des filtres
 
+// Initialisation de $selectedReferentiels avec un tableau vide
+$selectedReferentiels = [];
 
-
+// Si 'referentiel' est défini dans l'URL, récupérer les valeurs sélectionnées
 if (isset($_GET['referentiel'])) {
-
-    $selectedReferentiel = ($_GET['referentiel']);
-
-    $_SESSION['selected_referentiel'] = $selectedReferentiel;
-} else {
-
-    $selectedReferentiel = $_SESSION['selected_referentiel'] ?? '';
+    // Si une seule valeur est sélectionnée, la convertir en tableau
+    $selectedReferentiels = is_array($_GET['referentiel']) ? $_GET['referentiel'] : [$_GET['referentiel']];
+    
+    // Stocker les valeurs sélectionnées dans la session
+    $_SESSION['selected_referentiel'] = $selectedReferentiels;
+} elseif (isset($_SESSION['selected_referentiel'])) {
+    // Si aucune valeur n'est sélectionnée dans l'URL mais qu'il y a des valeurs stockées dans la session
+    $selectedReferentiels = $_SESSION['selected_referentiel'];
 }
 
+// Récupérer tous les référentiels
 $referentiels = getAllReferentiels($Allstudent);
 
+// Filtrer les référentiels
 $filteredReferentiel = [];
 foreach ($Allstudent as $AppItem) {
-    if ($selectedReferentiel === '' || $AppItem['referentiel'] === $selectedReferentiel) {
+    if (empty($selectedReferentiels) || in_array($AppItem['referentiel'], $selectedReferentiels)) {
         $filteredReferentiel[] = $AppItem;
     }
 }
-
-
-
-
 
 
 // $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
@@ -60,7 +61,7 @@ foreach ($Allstudent as $AppItem) {
 
 
 
-$perPage = 3 ;
+$perPage = 10;
 
 // Page actuelle
 $page = isset($_POST['page']) ? $_POST['page'] : 1;

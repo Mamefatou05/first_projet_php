@@ -720,20 +720,29 @@ body {
       justify-content: space-between;
     }
     .img-titre .nom-ref{
+      margin-top: 35px;
+
       font-weight: bold;
     }
     .img-titre .active{
+      margin-top: 20px;
       color: #038e89;
     }
     
     .referent .list-ref .ref-classe div #class{
-      width: 100%;
+      width: 90%;
       height: 80%;
     
     }
+ 
+    .img-titre div:first-child img{
+      width: 100%;
+      height: 100%;
+    }
     
+     
     .referent .nv-ref{
-      width: 230px;
+      width: 260px;
       height: 300px;
       background: #fff;
       border-radius: 10px;
@@ -755,10 +764,42 @@ body {
     
     
     }
+
+    .file-upload-container {
+      display: flex;
+      align-items: center; /* Aligner les éléments verticalement au centre */
+  }
+/* Cacher le champ de fichier */
+input[type="file"] {
+  display: none;
+}
+
+/* Styles pour le bouton personnalisé */
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline;
+  padding-top: 7px ;
+  padding-left: 2px;
+
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  background-color:#029287; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border-radius: 4px;
+}
+
+/* Styles au survol */
+.custom-file-upload:hover {
+  background-color: #029287; /* Couleur de fond au survol */
+}
+
+
+
     .referent .nv-ref div input{
      width: 100%;
      padding: 4%;
-    }
+    } 
     .referent .nv-ref div i{
       position: absolute;
       top: 50%;
@@ -771,7 +812,7 @@ body {
       cursor: pointer;
       width: 100px;
       height: 30px;
-      margin-left: 55px;
+      margin-left: 65px;
       box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.30);
     }
     .referent .nv-ref .btn-enrg a{
@@ -779,8 +820,103 @@ body {
       color: #fff;
     }
   
+
+
+    .toggle-button {
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 20px;
+      cursor: pointer;
+  }
+  
+  .circle {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+  }
+  
+  #add_to_promotion:checked + .toggle-button .circle {
+    background-color:  #038e89;
+      transform: translateX(20px);
+  }
+
+  
   
     /* utilisateur.html */
+
+
+
+    .custom-select {
+      position: relative;
+      display: inline-block;
+      width: 200px; /* Largeur de la liste déroulante */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+  
+  /* Style de l'élément sélectionné */
+  .custom-select .select-selected {
+      background-color: #f2f2f2;
+      padding: 8px 10px;
+      cursor: pointer;
+  }
+  
+  /* Flèche pour indiquer le déroulement */
+  .custom-select .select-selected:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -3px;
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #888 transparent transparent transparent;
+  }
+  
+  /* Style de la liste des options */
+  .custom-select .select-items {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      width: calc(100% - 2px); /* Largeur de la liste déroulante moins la bordure */
+      max-height: 200px; /* Hauteur maximale de la liste déroulante */
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-top: none;
+      z-index: 99;
+  }
+  
+  .custom-select .select-items .btn {
+      background-color: rgb(22, 145, 114);
+      padding: 8px 10px;
+      cursor: pointer;
+      color: #fff;
+      width:calc(100% - 2px);
+  }
+  
+  /* Affichage de la liste lorsqu'elle est activée */
+  .custom-select.active .select-items {
+      display: block;
+  }
+  
+  /* Style des options */
+  .custom-select .select-items div {
+      padding: 8px 10px;
+      cursor: pointer;
+  }
+  
+  /* Effet hover sur les options */
+  .custom-select .select-items div:hover {
+      background-color: #ddd;
+  }
   
   
   .titre-apprenant{
@@ -959,7 +1095,7 @@ body {
   
   .titre-liste {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr  1fr;
     background-color: #f0f0f0;
     font-weight: bold;
     padding: 8px;
@@ -971,7 +1107,7 @@ body {
     display: grid;
     justify-content: center;
     margin: 10px;
-    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr  1fr;
     padding: 15px;
   }
   .titre-liste div , .apprenants div{

@@ -23,8 +23,6 @@
           <a href="#">Mot de passe oublié ?</a>
         </div>
           <button class="button-connect" type="submit">Log in</button>
-
-
       </form>
     </div>
 </div>
