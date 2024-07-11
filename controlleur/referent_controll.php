@@ -2,7 +2,8 @@
 include "../models/fonction_ref.php";
 include '../models/model.php';
 
-$filename = '../DATA/referentiel.csv';
+$filename = '../DATA/referent.csv'; // Remplacez 'votre_fichier.csv' par le chemin de votre fichier CSV
+
 
 $active_promotion = isset($_SESSION['selected_promotion']) ? $_SESSION['selected_promotion'] : "Promotion 1";
 
@@ -67,26 +68,19 @@ if(in_array($libelle, $existing_referentiels)) {
     
     // Si aucune erreur n'a été détectée, procéder au traitement
     if(empty($errors)) {
-        // Préparer les données à ajouter au fichier CSV
-        $data = [
-            'image' => $image,
-            'libelle' => $libelle,
-            'etat' => 'Active',
-            'description' => $description
-        ];
-    
-        // Si le bouton add_to_promotion est activé, ajouter le référentiel à la promotion en cours
-        if ($add_to_promotion) {
-            $data['promotion'] = $active_promotion;
-        } else {
-            // Si le bouton add_to_promotion est désactivé, ne pas attribuer le référentiel à une promotion spécifique
-            $data['promotion'] = ''; // Ou une autre valeur représentant l'absence de promotion
-        }
-    
+        // Traitement des données
         // Ajouter les données au fichier CSV
-        AjoutToCsv($filename, [$data]);
-    
-        // Redirection vers la page appropriée
+        AjoutToCsv($filename, [
+            [
+                'image' => $image,
+                'libelle' => $libelle,
+                'etat' => 'Active',
+                'promotion' => $active_promotion, // Assurez-vous que $active_promotion est défini
+                'description' => $description
+            ]
+        ]);
+
+        // Redirection vers une autre page après l'ajout
         header('Location: ../public/index.php?m=4');
         exit();
     }
